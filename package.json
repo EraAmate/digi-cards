@@ -1,0 +1,20 @@
+{
+  "name": "digi-cards",
+  "version": "1.0.0",
+  "description": "Digimons cards list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EraAmate/digi-cards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EraAmate/digi-cards/issues"
+  },
+  "homepage": "https://github.com/EraAmate/digi-cards#readme"
+}
