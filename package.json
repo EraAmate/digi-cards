@@ -4,6 +4,7 @@
   "description": "Digimons cards list",
   "private": true,
   "scripts": {
+    "build": "webpack",
     "test": "eslint src/**"
   },
   "repository": {
