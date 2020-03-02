@@ -1,6 +1,6 @@
 function render() {
   const element = document.createElement('div');
-  element.innerText = 'Dragons';
+  element.innerText = 'Dragon';
   return element;
 }
 export default render;
