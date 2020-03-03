@@ -7,7 +7,14 @@ import { search } from './components/search';
 import { digimons } from './components/digimons';
 // import Logo from './assets/pokemon.png';
 
-const allDigimons = ['Lalal', 'Yoyoyi', 'Mimimi', 'Ufufufu', 'Yayaya'];
+const allDigimons = [
+  'Angewomon',
+  'Gatomon',
+  'GeoGreymon',
+  'Garurumon',
+  'Antylamon',
+  'Arkadimon'
+];
 
 export function app() {
   const header = createElement('header', {
@@ -27,8 +34,8 @@ export function app() {
 
   // header.appendChild(logo);
   header.appendChild(titleElement);
-  main.appendChild(searchElement);
   main.appendChild(subtitleElement);
+  main.appendChild(searchElement);
 
   const searchResults = createElement('div', {});
   main.appendChild(searchResults);

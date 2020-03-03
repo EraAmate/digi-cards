@@ -10,8 +10,8 @@ export function title(text) {
   return element;
 }
 
-export function subtitle(text) {
-  const element = createElement('h3', {
+export function subtitle() {
+  const element = createElement('h2', {
     innerText: 'Find your personal digital monster',
     className: 'subtit'
   });
