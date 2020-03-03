@@ -1,36 +1,52 @@
+import './app.scss';
 import { createElement } from './lib/dom';
 import { title } from './components/title';
 import { search } from './components/search';
+import { digimons } from './components/digimons';
+// import Logo from './assets/pokemon.png';
+
+const allDigimons = ['Lalal', 'Yoyoyi', 'Mimimi', 'Ufufufu', 'Yayaya'];
 
 export function app() {
   const header = createElement('header', {
     className: 'header'
   });
-  const main = createElement('main', {});
+
+  const main = createElement('main', {
+    className: 'main'
+  });
   const titleElement = title('Digimons Cards');
   const searchElement = search();
-  const inputResult = createElement('div', {
-    className: 'inputResult'
-  });
-  const inpuResultText = createElement('p', {
-    innerText: '',
-    className: 'inputResultText'
-  });
+  // const logo = createElement('img', {
+  //   className: 'logo',
+  //   src: Logo
+  // });
 
-  searchElement.addEventListener('input', event => {
-    inpuResultText.innerText = searchElement.value;
-    return inpuResultText.innerText;
-  });
-
-  searchElement.addEventListener('input', event => {
-    console.log(event.target.value, searchElement.value);
-  });
-
+  // header.appendChild(logo);
   header.appendChild(titleElement);
   main.appendChild(searchElement);
 
-  main.appendChild(inputResult);
-  inputResult.appendChild(inpuResultText);
+  const searchResults = createElement('div', {});
+  main.appendChild(searchResults);
+
+  // searchElement.addEventListener('input', event => {
+  //   main.removeChild(searchResults);
+
+  //   searchResults = digimons(filteredDigimons);
+  //   main.appendChild(searchResults);
+  // });
+
+  searchElement.addEventListener('input', event => {
+    searchResults.innerHTML = ''; // clear search results
+
+    const searchValue = event.target.value;
+    const filteredDigimons = allDigimons.filter(digimon => {
+      return digimon.startsWith(searchValue);
+    });
+
+    const digimonsElement = digimons(filteredDigimons);
+    searchResults.appendChild(digimonsElement);
+  });
 
   return [header, main];
 }
