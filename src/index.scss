@@ -1,8 +1,11 @@
-$body-color: whitesmoke;
-$background-color: #f6f6f6;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  color: $body-color;
-  background-color: $background-color;
+  background-image: linear-gradient(to top, #1d2b83, #f8cdda);
+  height: 100vh;
+  text-align: center;
 }
