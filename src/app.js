@@ -44,9 +44,9 @@ export function app() {
   searchElement.addEventListener('input', event => {
     searchResults.innerHTML = ''; // clear results
 
-    const searchValue = event.target.value;
+    const searchValue = event.target.value; //  oder sschon hier angeben: event.target.value.toLowerCase
     const filteredDigimons = allDigimons.filter(digimon => {
-      return digimon.startsWith(searchValue);
+      return digimon.toLowerCase().startsWith(searchValue.toLowerCase());
     });
 
     let digimonsElement = digimons(filteredDigimons);
