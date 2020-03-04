@@ -5,7 +5,7 @@ import { subtitle } from './components/title';
 
 import { search } from './components/search';
 import { digimons } from './components/digimons';
-// import Logo from './assets/pokemon.png';
+import DigiLogo from './assets/Digimon_logo.png';
 
 const allDigimons = [
   'Angewomon',
@@ -27,12 +27,13 @@ export function app() {
   const titleElement = title('Digimons Cards');
   const subtitleElement = subtitle('Finde dein digitales monster');
   const searchElement = search();
-  // const logo = createElement('img', {
-  //   className: 'logo',
-  //   src: Logo
-  // });
 
-  // header.appendChild(logo);
+  const DLogo = createElement('img', {
+    className: 'logo',
+    src: DigiLogo
+  });
+
+  header.appendChild(DLogo);
   header.appendChild(titleElement);
   main.appendChild(subtitleElement);
   main.appendChild(searchElement);
