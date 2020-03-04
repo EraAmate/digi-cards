@@ -1,7 +1,7 @@
 import './digimons.scss';
 import { createElement } from '../lib/dom';
 
-export function digimons(items) {
+export function digimonsAll(items) {
   const container = createElement('div', {
     className: 'digimons'
   });

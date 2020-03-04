@@ -1,11 +1,12 @@
 import './search.scss';
 import { createElement } from '../lib/dom';
 
-export function search() {
+export function search(value) {
   const element = createElement('input', {
     type: 'search',
     className: 'search',
-    placeholder: 'looking for...'
+    placeholder: 'looking for...',
+    value: value
   });
 
   return element;
