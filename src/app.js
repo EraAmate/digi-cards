@@ -15,7 +15,6 @@ const allDigimons = [
   'Antylamon',
   'Arkadimon'
 ];
-
 export function app() {
   const header = createElement('header', {
     className: 'header'
@@ -24,7 +23,7 @@ export function app() {
   const main = createElement('main', {
     className: 'main'
   });
-  const titleElement = title('Digimons Cards');
+  const titleElement = title('Digitorium');
   const subtitleElement = subtitle('Finde dein digitales monster');
   const searchElement = search();
 
@@ -39,26 +38,36 @@ export function app() {
   main.appendChild(searchElement);
 
   const searchResults = createElement('div', {});
+
   main.appendChild(searchResults);
 
-  // searchElement.addEventListener('input', event => {
-  //   main.removeChild(searchResults);
-
-  //   searchResults = digimons(filteredDigimons);
-  //   main.appendChild(searchResults);
-  // });
-
   searchElement.addEventListener('input', event => {
-    searchResults.innerHTML = ''; // clear search results
+    searchResults.innerHTML = ''; // clear results
 
     const searchValue = event.target.value;
     const filteredDigimons = allDigimons.filter(digimon => {
       return digimon.startsWith(searchValue);
     });
 
-    const digimonsElement = digimons(filteredDigimons);
+    let digimonsElement = digimons(filteredDigimons);
     searchResults.appendChild(digimonsElement);
   });
 
   return [header, main];
 }
+
+// let pokemons = createPokemons(allPokemons);
+
+// appendContent(header, [logo, title]);
+// appendContent(main, [searchInput, pokemons]);
+
+// searchInput.addEventListener('input', event => {
+//   main.removeChild(pokemons);
+
+//   const searchValue = event.target.value;
+//   const filteredPokemons = allPokemons.filter(pokemon => {
+//     return pokemon.startsWith(searchValue);
+//   });
+//   pokemons = createPokemons(filteredPokemons);
+//   appendContent(main, pokemons);
+// });
