@@ -55,19 +55,3 @@ export function app() {
 
   return [header, main];
 }
-
-// let pokemons = createPokemons(allPokemons);
-
-// appendContent(header, [logo, title]);
-// appendContent(main, [searchInput, pokemons]);
-
-// searchInput.addEventListener('input', event => {
-//   main.removeChild(pokemons);
-
-//   const searchValue = event.target.value;
-//   const filteredPokemons = allPokemons.filter(pokemon => {
-//     return pokemon.startsWith(searchValue);
-//   });
-//   pokemons = createPokemons(filteredPokemons);
-//   appendContent(main, pokemons);
-// });
