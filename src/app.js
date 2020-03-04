@@ -1,11 +1,20 @@
 import './app.scss';
 import { createElement } from './lib/dom';
 import { title } from './components/title';
+import { subtitle } from './components/title';
+
 import { search } from './components/search';
 import { digimons } from './components/digimons';
 // import Logo from './assets/pokemon.png';
 
-const allDigimons = ['Lalal', 'Yoyoyi', 'Mimimi', 'Ufufufu', 'Yayaya'];
+const allDigimons = [
+  'Angewomon',
+  'Gatomon',
+  'GeoGreymon',
+  'Garurumon',
+  'Antylamon',
+  'Arkadimon'
+];
 
 export function app() {
   const header = createElement('header', {
@@ -16,6 +25,7 @@ export function app() {
     className: 'main'
   });
   const titleElement = title('Digimons Cards');
+  const subtitleElement = subtitle('Finde dein digitales monster');
   const searchElement = search();
   // const logo = createElement('img', {
   //   className: 'logo',
@@ -24,6 +34,7 @@ export function app() {
 
   // header.appendChild(logo);
   header.appendChild(titleElement);
+  main.appendChild(subtitleElement);
   main.appendChild(searchElement);
 
   const searchResults = createElement('div', {});

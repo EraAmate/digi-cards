@@ -9,3 +9,12 @@ export function title(text) {
 
   return element;
 }
+
+export function subtitle() {
+  const element = createElement('h2', {
+    innerText: 'Find your personal digital monster',
+    className: 'subtit'
+  });
+
+  return element;
+}
