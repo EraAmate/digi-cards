@@ -63,8 +63,18 @@ export function app() {
     main.removeChild(digimons);
     setSearchResults();
 
+<<<<<<< HEAD
     const searchValue = event.target.value;
     sessionStorage.setItem('searchValue', searchValue);
+=======
+    const searchValue = event.target.value; //  oder sschon hier angeben: event.target.value.toLowerCase
+    const filteredDigimons = allDigimons.filter(digimon => {
+      return digimon.toLowerCase().startsWith(searchValue.toLowerCase());
+    });
+
+    let digimonsElement = digimons(filteredDigimons);
+    searchResults.appendChild(digimonsElement);
+>>>>>>> master
   });
 
   return [header, main];
