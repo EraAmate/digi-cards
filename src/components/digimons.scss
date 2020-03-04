@@ -6,14 +6,23 @@
 }
 
 .digimon {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   text-align: center;
   margin: 20px;
   border: 1px solid;
   padding: 4px;
-  border-radius: 1.2rem;
+  border-radius: 0.9rem;
   background: none;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 40px;
+  color: #0d0093;
+  background-color: #dc8404;
+
+  &:hover {
+    border: solid 3px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #0d0093;
+  }
 }

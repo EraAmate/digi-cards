@@ -6,6 +6,7 @@ import { appendContent } from './lib/dom';
 import { search } from './components/search';
 import { digimonsAll } from './components/digimons';
 import DigiLogo from './assets/Digimon_logo.png';
+import Teams from './assets/team.jpg';
 
 const allDigimons = [
   'Angewomon',
@@ -42,6 +43,11 @@ export function app() {
     src: DigiLogo
   });
 
+  const Team = createElement('img', {
+    className: 'bgImgage',
+    src: Teams
+  });
+
   let digimons = null;
 
   function setSearchResults() {
@@ -50,31 +56,15 @@ export function app() {
     appendContent(main, digimons);
   }
   setSearchResults();
-  // header.appendChild(DLogo);
-  // header.appendChild(titleElement);
-  // main.appendChild(subtitleElement);
-  // main.appendChild(searchElement);
-  // main.appendChild(digimons);
-
   appendContent(header, [DLogo, titleElement]);
-  appendContent(main, [subtitleElement, searchElement, digimons]);
+  appendContent(main, [subtitleElement, searchElement, digimons, Team]);
 
   searchElement.addEventListener('input', event => {
     main.removeChild(digimons);
     setSearchResults();
 
-<<<<<<< HEAD
     const searchValue = event.target.value;
     sessionStorage.setItem('searchValue', searchValue);
-=======
-    const searchValue = event.target.value; //  oder sschon hier angeben: event.target.value.toLowerCase
-    const filteredDigimons = allDigimons.filter(digimon => {
-      return digimon.toLowerCase().startsWith(searchValue.toLowerCase());
-    });
-
-    let digimonsElement = digimons(filteredDigimons);
-    searchResults.appendChild(digimonsElement);
->>>>>>> master
   });
 
   return [header, main];
