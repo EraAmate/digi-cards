@@ -1,17 +1,24 @@
 import './digimons.scss';
-import { createElement } from '../lib/dom';
+import { createElement, appendContent } from '../lib/dom';
 
-export function digimonsAll(items) {
+export function createSearchResults(value) {
   const container = createElement('div', {
     className: 'digimons'
   });
 
-  items.forEach(item => {
+  value.items.forEach(item => {
     const element = createElement('div', {
       innerText: item,
       className: 'digimon'
     });
-    container.appendChild(element);
+    element.addEventListener('click', () => {
+      // const favorites = [item];
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      favorites.push(item);
+      const favoritesJSON = JSON.stringify(favorites);
+      localStorage.setItem('favorites', favoritesJSON);
+    });
+    appendContent(container, element);
   });
   return container;
 }
