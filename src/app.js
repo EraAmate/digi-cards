@@ -8,6 +8,7 @@ import { search } from './components/search';
 import { createSearchResults } from './components/digimons';
 import DigiLogo from './assets/Digimon_logo.png';
 import Teams from './assets/team.jpg';
+import { createFavorElem } from './components/favoriten';
 
 export function app() {
   const header = createElement('header', {
@@ -16,6 +17,7 @@ export function app() {
   const main = createElement('main', {
     className: 'main'
   });
+
   const titleElement = title('Digitorium');
   const subtitleElement = subtitle('Finde dein digitales monster');
 
@@ -30,6 +32,10 @@ export function app() {
   const Team = createElement('img', {
     className: 'bgImage',
     src: Teams
+  });
+
+  const favorElem = createFavorElem({
+    items: ['Gatomon', 'Omnimon', 'Agumon', 'Angewomon']
   });
 
   let searchResults = null;
@@ -47,7 +53,13 @@ export function app() {
   setSearchResults();
 
   appendContent(header, [DLogo, titleElement]);
-  appendContent(main, [subtitleElement, searchElement, searchResults, Team]);
+  appendContent(main, [
+    subtitleElement,
+    searchElement,
+    searchResults,
+    Team,
+    favorElem
+  ]);
 
   searchElement.addEventListener('input', event => {
     main.removeChild(searchResults);
@@ -57,5 +69,5 @@ export function app() {
     sessionStorage.setItem('searchValue', searchValue);
   });
 
-  return [header, main];
+  return [header, main, favorElem];
 }

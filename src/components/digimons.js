@@ -11,6 +11,7 @@ export function createSearchResults(value) {
       innerText: item,
       className: 'digimon'
     });
+
     element.addEventListener('click', () => {
       // const favorites = [item];
 

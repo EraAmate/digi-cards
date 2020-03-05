@@ -1,0 +1,19 @@
+.favorElem {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  height: 400px;
+  width: 100%;
+}
+.favorite {
+  background-color: #f4f4f4;
+  border: 1px solid;
+  border-color: #cb5415;
+  border-radius: 5px;
+  background-color: #caa8ab;
+  height: 40px;
+  color: #0d0093;
+  font-size: 22px;
+  text-align: center;
+  width: 300px;
+}
