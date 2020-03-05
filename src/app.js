@@ -28,7 +28,7 @@ export function app() {
   });
 
   const Team = createElement('img', {
-    className: 'bgImgage',
+    className: 'bgImage',
     src: Teams
   });
 
