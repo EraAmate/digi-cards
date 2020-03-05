@@ -1,4 +1,4 @@
-const allPokemons = ['Pikachu', 'Pichu', 'Marwinchu', 'Juliachu', 'Johannachu'];
+const allPokemons = ['Agumon', 'Angewomon', 'Gatomon', 'Omnimon', 'Greymoron'];
 
 export function filterDigimons(searchValue) {
   const lowerCaseSearchValue = searchValue.toLowerCase();
