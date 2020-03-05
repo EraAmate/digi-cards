@@ -34,9 +34,25 @@ export function app() {
     src: Teams
   });
 
-  const favorElem = createFavorElem({
-    items: ['Gatomon', 'Omnimon', 'Agumon', 'Angewomon']
-  });
+function refreshLocalStorage(item) {
+  let favorElem = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  if (!favorites.includes(item)) {
+    favorites.push(item);
+  } else {
+    const itemIndex = favorites.indexOf(item);
+    favorites.splice(itemIndex, 1);
+  }
+
+  if (favorites.length > 4) {
+    favorites = favorites.slice(1);
+  }
+
+  const favoritesJSON = JSON.stringify(favorites);
+  localStorage.setItem('favorites', favoritesJSON);
+}
+}
+
 
   let searchResults = null;
 
